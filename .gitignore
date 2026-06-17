@@ -1,0 +1,21 @@
+# OS / editor
+.DS_Store
+*.log
+
+# Node / TypeScript
+node_modules/
+dist/
+.wrangler/
+
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+.pytest_cache/
+.ruff_cache/
+build/
+*.egg-info/
+
+# Secrets / local env
+.env
+.dev.vars

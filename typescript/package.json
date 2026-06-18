@@ -22,7 +22,8 @@
     "test": "vitest run",
     "typecheck": "tsc --noEmit",
     "lint": "biome check .",
-    "format": "biome check --write ."
+    "format": "biome check --write .",
+    "prepublishOnly": "npm run build"
   },
   "keywords": [
     "ai-agents",
@@ -33,6 +34,16 @@
     "agent-payments"
   ],
   "license": "MIT",
+  "author": "Frisk contributors",
+  "homepage": "https://github.com/Jiangw2718i/frisk#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Jiangw2718i/frisk.git",
+    "directory": "typescript"
+  },
+  "bugs": {
+    "url": "https://github.com/Jiangw2718i/frisk/issues"
+  },
   "engines": {
     "node": ">=18"
   },

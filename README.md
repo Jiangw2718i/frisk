@@ -71,3 +71,6 @@ See [CONTRIBUTING.md](CONTRIBUTING.md). Security disclosures: [SECURITY.md](SECU
 ## License
 
 [MIT](LICENSE)
+
+The hosted API at `api.tryfrisk.dev` is additionally governed by the
+[Terms of Service](TERMS.md).

@@ -9,6 +9,13 @@ Both SDKs (`frisk-screen` on npm and PyPI) are versioned together.
 
 ## [Unreleased]
 
+## [0.0.2] - 2026-06-22
+
+### Changed
+
+- Docs: the hosted tier's cost is now described as "Free in early access"
+  rather than "Usage-based", reflecting that the hosted API is free to start.
+
 ## [0.0.1] - 2026-06-16
 
 ### Added
@@ -21,5 +28,6 @@ Both SDKs (`frisk-screen` on npm and PyPI) are versioned together.
   seed blocklist).
 - Hosted mode via API key for reputation history and live threat intelligence.
 
-[Unreleased]: https://github.com/Jiangw2718i/frisk/compare/v0.0.1...HEAD
+[Unreleased]: https://github.com/Jiangw2718i/frisk/compare/v0.0.2...HEAD
+[0.0.2]: https://github.com/Jiangw2718i/frisk/releases/tag/v0.0.2
 [0.0.1]: https://github.com/Jiangw2718i/frisk/releases/tag/v0.0.1

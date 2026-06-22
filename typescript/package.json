@@ -1,6 +1,6 @@
 {
   "name": "frisk-screen",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Pre-transaction risk screening for autonomous AI agents.",
   "type": "module",
   "exports": {

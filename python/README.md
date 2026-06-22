@@ -41,7 +41,7 @@ if not result.allowed:
 | Runs | Locally, offline | Frisk API |
 | Signals | Public, structural checks only | Reputation graph, trained models, live threat feed |
 | Confidence | Always `low` | Rises with coverage |
-| Cost | Free | Usage-based |
+| Cost | Free | Free in early access |
 
 Lite mode catches obvious problems — malformed counterparties, `payTo` swaps,
 insecure endpoints, policy violations, and a small seed blocklist. For

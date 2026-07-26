@@ -1,0 +1,38 @@
+{
+  "$schema": "https://static.modelcontextprotocol.io/schemas/2025-12-11/server.schema.json",
+  "name": "dev.tryfrisk/frisk",
+  "title": "Frisk",
+  "description": "Screen the counterparty of an x402 payment before an agent pays it. Runs offline by default.",
+  "version": "0.0.1",
+  "repository": {
+    "url": "https://github.com/Jiangw2718i/frisk",
+    "source": "github",
+    "subfolder": "mcp"
+  },
+  "websiteUrl": "https://tryfrisk.dev",
+  "packages": [
+    {
+      "registryType": "npm",
+      "registryBaseUrl": "https://registry.npmjs.org",
+      "identifier": "frisk-mcp",
+      "version": "0.0.1",
+      "transport": {
+        "type": "stdio"
+      },
+      "environmentVariables": [
+        {
+          "name": "FRISK_API_KEY",
+          "description": "Hosted API key. Without it the server screens entirely offline.",
+          "isRequired": false,
+          "isSecret": true
+        },
+        {
+          "name": "FRISK_BASE_URL",
+          "description": "Override the hosted endpoint. Defaults to https://api.tryfrisk.dev.",
+          "isRequired": false,
+          "isSecret": false
+        }
+      ]
+    }
+  ]
+}

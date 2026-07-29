@@ -1,4 +1,4 @@
-import { McpServer } from "@modelcontextprotocol/sdk/server/mcp.js";
+import { McpServer } from "@modelcontextprotocol/server";
 import { Client, type ScreenResult } from "frisk-screen";
 import { z } from "zod";
 
@@ -9,7 +9,7 @@ export interface ServerOptions {
   baseUrl?: string;
 }
 
-const inputSchema = {
+const inputSchema = z.object({
   counterparty: z
     .string()
     .describe("The address the agent intends to pay, e.g. an 0x EVM address."),
@@ -39,7 +39,7 @@ const inputSchema = {
     .array(z.string())
     .optional()
     .describe("Assets the agent is permitted to pay in."),
-};
+});
 
 /**
  * The verdict is advisory. Frisk returns a recommendation and the caller

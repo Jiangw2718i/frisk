@@ -1,0 +1,896 @@
+[
+ {
+  "spec": "stripe-mcp-server@1.0.0",
+  "measured": 1,
+  "real": 1,
+  "optional_entries": 0
+ },
+ {
+  "spec": "mind-map-mcp@1.12.13",
+  "measured": 61,
+  "real": 61,
+  "optional_entries": 0
+ },
+ {
+  "spec": "@jayofemi/ai-checker@1.0.0",
+  "measured": 96,
+  "real": 96,
+  "optional_entries": 0
+ },
+ {
+  "spec": "@platfone/mcp@1.1.8",
+  "measured": 127,
+  "real": 127,
+  "optional_entries": 0
+ },
+ {
+  "spec": "interviewer-mcp@0.4.0",
+  "measured": 94,
+  "real": 94,
+  "optional_entries": 0
+ },
+ {
+  "spec": "@infoinlet/mcp-time@0.1.1",
+  "measured": 97,
+  "real": 97,
+  "optional_entries": 0
+ },
+ {
+  "spec": "@atk1-eng/mcp-weather-server@1.0.1",
+  "measured": 94,
+  "real": 94,
+  "optional_entries": 0
+ },
+ {
+  "spec": "vueuse-mcp@1.0.0",
+  "measured": 106,
+  "real": 106,
+  "optional_entries": 0
+ },
+ {
+  "spec": "maxaeo-ai-visibility-mcp@0.3.2",
+  "measured": 94,
+  "real": 94,
+  "optional_entries": 0
+ },
+ {
+  "spec": "agentschat-mcp@0.30.0",
+  "measured": 94,
+  "real": 94,
+  "optional_entries": 0
+ },
+ {
+  "spec": "material-simulator-mcp@0.1.4",
+  "measured": 94,
+  "real": 94,
+  "optional_entries": 0
+ },
+ {
+  "spec": "mdshare-mcp@1.4.1",
+  "measured": 94,
+  "real": 94,
+  "optional_entries": 0
+ },
+ {
+  "spec": "@clearlist/mcp-server@0.4.2",
+  "measured": 94,
+  "real": 94,
+  "optional_entries": 0
+ },
+ {
+  "spec": "@itcons-app/mcp@0.5.1",
+  "measured": 94,
+  "real": 94,
+  "optional_entries": 0
+ },
+ {
+  "spec": "kadenzo-mcp@1.3.1",
+  "measured": 94,
+  "real": 94,
+  "optional_entries": 0
+ },
+ {
+  "spec": "@theyahia/huntflow-mcp@1.0.0",
+  "measured": 94,
+  "real": 94,
+  "optional_entries": 0
+ },
+ {
+  "spec": "mcp-gateway-scan@0.1.1",
+  "measured": 94,
+  "real": 94,
+  "optional_entries": 0
+ },
+ {
+  "spec": "md-feedback@1.5.6",
+  "measured": 94,
+  "real": 94,
+  "optional_entries": 0
+ },
+ {
+  "spec": "foundry-zksync-mcp@0.2.3",
+  "measured": 94,
+  "real": 94,
+  "optional_entries": 0
+ },
+ {
+  "spec": "dechonet-mcp@1.0.1",
+  "measured": 94,
+  "real": 94,
+  "optional_entries": 0
+ },
+ {
+  "spec": "@unclick/willyweather-mcp@0.1.0",
+  "measured": 94,
+  "real": 94,
+  "optional_entries": 0
+ },
+ {
+  "spec": "@codespar/mcp-niubiz@0.1.0",
+  "measured": 94,
+  "real": 94,
+  "optional_entries": 0
+ },
+ {
+  "spec": "grist-mcp-server@2.0.33",
+  "measured": 107,
+  "real": 107,
+  "optional_entries": 0
+ },
+ {
+  "spec": "@paretools/npm@0.8.0",
+  "measured": 95,
+  "real": 95,
+  "optional_entries": 0
+ },
+ {
+  "spec": "@seraviahealth/glp1search-mcp@2.0.1",
+  "measured": 94,
+  "real": 94,
+  "optional_entries": 0
+ },
+ {
+  "spec": "@useagentstore/solve-mcp@0.1.1",
+  "measured": 94,
+  "real": 94,
+  "optional_entries": 0
+ },
+ {
+  "spec": "@mambalabsdev/mcp-gtm-hiring-signal-scraper@1.0.6",
+  "measured": 94,
+  "real": 94,
+  "optional_entries": 0
+ },
+ {
+  "spec": "@neuledge/context@0.2.3",
+  "measured": 208,
+  "real": 208,
+  "optional_entries": 0
+ },
+ {
+  "spec": "aidc-mcp-server@0.2.2",
+  "measured": 94,
+  "real": 94,
+  "optional_entries": 0
+ },
+ {
+  "spec": "tascan-mcp@1.0.1",
+  "measured": 94,
+  "real": 94,
+  "optional_entries": 0
+ },
+ {
+  "spec": "@rog0x/mcp-webhook-tools@1.0.2",
+  "measured": 94,
+  "real": 94,
+  "optional_entries": 0
+ },
+ {
+  "spec": "@p402/mcp-server@1.0.0",
+  "measured": 108,
+  "real": 108,
+  "optional_entries": 0
+ },
+ {
+  "spec": "@codespar/mcp-inter-bank@0.2.2",
+  "measured": 94,
+  "real": 94,
+  "optional_entries": 0
+ },
+ {
+  "spec": "sqemo-mcp@1.3.0",
+  "measured": 130,
+  "real": 130,
+  "optional_entries": 1
+ },
+ {
+  "spec": "@codespar/mcp-caixa@0.2.0-alpha.3",
+  "measured": 94,
+  "real": 94,
+  "optional_entries": 0
+ },
+ {
+  "spec": "doktor-mcp-server@1.0.1",
+  "measured": 94,
+  "real": 94,
+  "optional_entries": 0
+ },
+ {
+  "spec": "@yobekasbah/mcp-server@3.0.1",
+  "measured": 1,
+  "real": 1,
+  "optional_entries": 0
+ },
+ {
+  "spec": "agent-signal@0.2.1",
+  "measured": 142,
+  "real": 142,
+  "optional_entries": 1
+ },
+ {
+  "spec": "@nor-data/nabolag-mcp@0.2.2",
+  "measured": 94,
+  "real": 94,
+  "optional_entries": 0
+ },
+ {
+  "spec": "audit-ledger-mcp@0.3.1",
+  "measured": 94,
+  "real": 94,
+  "optional_entries": 0
+ },
+ {
+  "spec": "agentforge-facturx-mcp@0.1.0",
+  "measured": 94,
+  "real": 94,
+  "optional_entries": 0
+ },
+ {
+  "spec": "seo-tools-mcp-gsc@1.3.0",
+  "measured": 116,
+  "real": 116,
+  "optional_entries": 0
+ },
+ {
+  "spec": "thecrawler@0.5.8",
+  "measured": 429,
+  "real": 429,
+  "optional_entries": 1
+ },
+ {
+  "spec": "entroly-mcp@1.0.65",
+  "measured": 1,
+  "real": 1,
+  "optional_entries": 0
+ },
+ {
+  "spec": "iwantmymtg-mcp@0.6.9",
+  "measured": 96,
+  "real": 96,
+  "optional_entries": 0
+ },
+ {
+  "spec": "resy-mcp@0.6.1",
+  "measured": 99,
+  "real": 99,
+  "optional_entries": 0
+ },
+ {
+  "spec": "claude-memory-fts@1.0.1",
+  "measured": 129,
+  "real": 129,
+  "optional_entries": 0
+ },
+ {
+  "spec": "@borealstack/proton-drive-cli-mcp@0.1.2",
+  "measured": 5,
+  "real": 5,
+  "optional_entries": 0
+ },
+ {
+  "spec": "@truepathpdf/mcp-server@0.3.0",
+  "measured": 102,
+  "real": 102,
+  "optional_entries": 11
+ },
+ {
+  "spec": "@cyanheads/openlibrary-mcp-server@0.2.3",
+  "measured": 127,
+  "real": 127,
+  "optional_entries": 0
+ },
+ {
+  "spec": "strava-mcp-unofficial@0.4.6",
+  "measured": 129,
+  "real": 129,
+  "optional_entries": 0
+ },
+ {
+  "spec": "@eigenart/agentshield-mcp@0.1.3",
+  "measured": 94,
+  "real": 94,
+  "optional_entries": 0
+ },
+ {
+  "spec": "@esaio/esa-mcp-server@0.13.0",
+  "measured": 97,
+  "real": 97,
+  "optional_entries": 0
+ },
+ {
+  "spec": "@rcs-kz/bitrix24-mcp@1.0.1",
+  "measured": 146,
+  "real": 146,
+  "optional_entries": 0
+ },
+ {
+  "spec": "@p-l-ta/calendar-mcp@1.0.0",
+  "measured": 94,
+  "real": 94,
+  "optional_entries": 0
+ },
+ {
+  "spec": "@practicaltools/reddit-mcp-server@1.0.5",
+  "measured": 152,
+  "real": 152,
+  "optional_entries": 1
+ },
+ {
+  "spec": "@unclick/lichess-mcp@0.1.0",
+  "measured": 94,
+  "real": 94,
+  "optional_entries": 0
+ },
+ {
+  "spec": "mcp-server-indexforge@1.0.2",
+  "measured": 94,
+  "real": 94,
+  "optional_entries": 0
+ },
+ {
+  "spec": "eyepup-mcp@0.1.1",
+  "measured": 94,
+  "real": 94,
+  "optional_entries": 0
+ },
+ {
+  "spec": "@ebenova/reddit-monitor-mcp@1.0.2",
+  "measured": 96,
+  "real": 96,
+  "optional_entries": 26
+ },
+ {
+  "spec": "@kundlit/mcp@1.0.1",
+  "measured": 94,
+  "real": 94,
+  "optional_entries": 0
+ },
+ {
+  "spec": "@replynodes/mcp@0.1.2",
+  "measured": 82,
+  "real": 82,
+  "optional_entries": 0
+ },
+ {
+  "spec": "@2sio/mcp@1.80.4",
+  "measured": 157,
+  "real": 157,
+  "optional_entries": 0
+ },
+ {
+  "spec": "@unclick/rawg-mcp@0.1.0",
+  "measured": 94,
+  "real": 94,
+  "optional_entries": 0
+ },
+ {
+  "spec": "mnemon-mcp@1.0.1",
+  "measured": 132,
+  "real": 132,
+  "optional_entries": 6
+ },
+ {
+  "spec": "petal-components-mcp@0.1.0",
+  "measured": 126,
+  "real": 126,
+  "optional_entries": 0
+ },
+ {
+  "spec": "umami-compass@0.5.1",
+  "measured": 94,
+  "real": 94,
+  "optional_entries": 0
+ },
+ {
+  "spec": "secure-vault-mcp@0.1.1",
+  "measured": 94,
+  "real": 94,
+  "optional_entries": 0
+ },
+ {
+  "spec": "payment-guard-mcp@1.0.1",
+  "measured": 94,
+  "real": 94,
+  "optional_entries": 0
+ },
+ {
+  "spec": "@codespar/mcp-pagbrasil@0.1.0",
+  "measured": 94,
+  "real": 94,
+  "optional_entries": 0
+ },
+ {
+  "spec": "engram-sdk@0.5.1",
+  "measured": 97,
+  "real": 97,
+  "optional_entries": 5
+ },
+ {
+  "spec": "@voteship/mcp-server@0.1.4",
+  "measured": 94,
+  "real": 94,
+  "optional_entries": 0
+ },
+ {
+  "spec": "roslyn-codelens-mcp@2.16.1",
+  "measured": 1,
+  "real": 1,
+  "optional_entries": 0
+ },
+ {
+  "spec": "sverklo@0.19.0",
+  "measured": 148,
+  "real": 148,
+  "optional_entries": 1
+ },
+ {
+  "spec": "bugproof@1.6.5",
+  "measured": 106,
+  "real": 106,
+  "optional_entries": 4
+ },
+ {
+  "spec": "@counterpoint-studio/audio-file-mcp-app@1.1.0",
+  "measured": 100,
+  "real": 100,
+  "optional_entries": 0
+ },
+ {
+  "spec": "@striderlabs/mcp-grubhub@0.1.3",
+  "measured": 97,
+  "real": 97,
+  "optional_entries": 1
+ },
+ {
+  "spec": "velixar-mcp-server@0.2.4",
+  "measured": 89,
+  "real": 89,
+  "optional_entries": 0
+ },
+ {
+  "spec": "costwright-mcp@0.1.1",
+  "measured": 94,
+  "real": 94,
+  "optional_entries": 0
+ },
+ {
+  "spec": "account-pool-mcp@0.1.1",
+  "measured": 129,
+  "real": 129,
+  "optional_entries": 0
+ },
+ {
+  "spec": "@theyahia/yandex-direct-mcp@3.0.2",
+  "measured": 94,
+  "real": 94,
+  "optional_entries": 0
+ },
+ {
+  "spec": "@n0zer0d4y/athena-protocol@0.1.0",
+  "measured": 297,
+  "real": 297,
+  "optional_entries": 20
+ },
+ {
+  "spec": "mcp-planner@0.2.0",
+  "measured": 94,
+  "real": 94,
+  "optional_entries": 0
+ },
+ {
+  "spec": "openaffiliate-mcp@0.0.3",
+  "measured": 94,
+  "real": 94,
+  "optional_entries": 0
+ },
+ {
+  "spec": "icon-composer-mcp@1.1.0",
+  "measured": 104,
+  "real": 102,
+  "optional_entries": 26
+ },
+ {
+  "spec": "agentshield-protocol@1.2.0",
+  "measured": 94,
+  "real": 94,
+  "optional_entries": 0
+ },
+ {
+  "spec": "motionlint@0.2.1",
+  "measured": 147,
+  "real": 145,
+  "optional_entries": 22
+ },
+ {
+  "spec": "nelly-elephant-mcp@1.0.3",
+  "measured": 94,
+  "real": 94,
+  "optional_entries": 0
+ },
+ {
+  "spec": "sovereign-code-quality-mcp@1.0.0",
+  "measured": 94,
+  "real": 94,
+  "optional_entries": 0
+ },
+ {
+  "spec": "@quantaseal/mcp-server@1.1.3",
+  "measured": 94,
+  "real": 94,
+  "optional_entries": 0
+ },
+ {
+  "spec": "agent-skill-loader@1.0.2",
+  "measured": 94,
+  "real": 94,
+  "optional_entries": 0
+ },
+ {
+  "spec": "@matematicsolutions/mcp-isap@1.2.0",
+  "measured": 94,
+  "real": 94,
+  "optional_entries": 0
+ },
+ {
+  "spec": "agentpay-mcp@3.1.0",
+  "measured": 108,
+  "real": 108,
+  "optional_entries": 0
+ },
+ {
+  "spec": "founden-mcp@0.1.0",
+  "measured": 94,
+  "real": 94,
+  "optional_entries": 0
+ },
+ {
+  "spec": "agentwallet-mcp@1.7.4",
+  "measured": 94,
+  "real": 94,
+  "optional_entries": 0
+ },
+ {
+  "spec": "@neturely/okffs@0.10.1",
+  "measured": 101,
+  "real": 101,
+  "optional_entries": 0
+ },
+ {
+  "spec": "mne-docs-mcp@1.0.49",
+  "measured": 132,
+  "real": 132,
+  "optional_entries": 0
+ },
+ {
+  "spec": "wishfinity-mcp-plusw@1.2.2",
+  "measured": 94,
+  "real": 94,
+  "optional_entries": 0
+ },
+ {
+  "spec": "@runapi.ai/runway-aleph-mcp@0.1.6",
+  "measured": 95,
+  "real": 95,
+  "optional_entries": 0
+ },
+ {
+  "spec": "casemgr-mcp@1.0.1",
+  "measured": 1,
+  "real": 1,
+  "optional_entries": 0
+ },
+ {
+  "spec": "orchard-data-mcp@1.2.0",
+  "measured": 112,
+  "real": 112,
+  "optional_entries": 0
+ },
+ {
+  "spec": "panini-connector-mcp@0.1.3",
+  "measured": 127,
+  "real": 127,
+  "optional_entries": 0
+ },
+ {
+  "spec": "@peekdev/mcp@0.1.0-alpha.24",
+  "measured": 152,
+  "real": 152,
+  "optional_entries": 0
+ },
+ {
+  "spec": "adaptive-cards-mcp@2.3.0",
+  "measured": 94,
+  "real": 94,
+  "optional_entries": 0
+ },
+ {
+  "spec": "@cyanheads/faa-aircraft-registry-mcp-server@0.1.7",
+  "measured": 128,
+  "real": 128,
+  "optional_entries": 0
+ },
+ {
+  "spec": "ytdl-rmcp@1.0.2",
+  "measured": 1,
+  "real": 1,
+  "optional_entries": 0
+ },
+ {
+  "spec": "@gaforov/selenium-mcp@0.2.1",
+  "measured": 110,
+  "real": 110,
+  "optional_entries": 0
+ },
+ {
+  "spec": "@agent-infra/mcp-server-filesystem@latest",
+  "measured": 91,
+  "real": 91,
+  "optional_entries": 0
+ },
+ {
+  "spec": "databazaar-mcp@1.2.0",
+  "measured": 104,
+  "real": 104,
+  "optional_entries": 0
+ },
+ {
+  "spec": "picoli-mcp@1.0.1",
+  "measured": 94,
+  "real": 94,
+  "optional_entries": 0
+ },
+ {
+  "spec": "@cyanheads/openfec-mcp-server@0.7.1",
+  "measured": 127,
+  "real": 127,
+  "optional_entries": 0
+ },
+ {
+  "spec": "@nicofains1/agentwatch@0.3.1",
+  "measured": 129,
+  "real": 129,
+  "optional_entries": 0
+ },
+ {
+  "spec": "gemini-researcher@1.0.2",
+  "measured": 95,
+  "real": 95,
+  "optional_entries": 0
+ },
+ {
+  "spec": "@dmytro-prototypes/dwg-mcp-server@0.1.4",
+  "measured": 1,
+  "real": 1,
+  "optional_entries": 0
+ },
+ {
+  "spec": "@decantr/mcp-server@3.9.4",
+  "measured": 12,
+  "real": 12,
+  "optional_entries": 0
+ },
+ {
+  "spec": "easy-notion-mcp@0.2.3",
+  "measured": 97,
+  "real": 97,
+  "optional_entries": 0
+ },
+ {
+  "spec": "spikes-mcp@0.4.1",
+  "measured": 1,
+  "real": 1,
+  "optional_entries": 0
+ },
+ {
+  "spec": "@g-digital/mcp-ead-factory@1.3.1",
+  "measured": 156,
+  "real": 156,
+  "optional_entries": 20
+ },
+ {
+  "spec": "n8n-mcp-community@0.1.2",
+  "measured": 94,
+  "real": 94,
+  "optional_entries": 0
+ },
+ {
+  "spec": "mcp-zebrunner@9.2.1",
+  "measured": 137,
+  "real": 135,
+  "optional_entries": 42
+ },
+ {
+  "spec": "dingdawg-data-agent@2.0.7",
+  "measured": 94,
+  "real": 94,
+  "optional_entries": 0
+ },
+ {
+  "spec": "valta-mcp@0.1.2",
+  "measured": 94,
+  "real": 94,
+  "optional_entries": 0
+ },
+ {
+  "spec": "@r16t/multimodal-mcp@1.3.1",
+  "measured": 96,
+  "real": 96,
+  "optional_entries": 0
+ },
+ {
+  "spec": "citadel-mcp@2.2.0",
+  "measured": 107,
+  "real": 107,
+  "optional_entries": 0
+ },
+ {
+  "spec": "ms-onedrive-mcp@1.0.1",
+  "measured": 110,
+  "real": 110,
+  "optional_entries": 0
+ },
+ {
+  "spec": "@rnaga/wp-mcp@1.0.9",
+  "measured": 283,
+  "real": 283,
+  "optional_entries": 67
+ },
+ {
+  "spec": "recon-crypto-mcp@0.3.1",
+  "measured": 271,
+  "real": 271,
+  "optional_entries": 3
+ },
+ {
+  "spec": "@darkhorseone/mcp-server-uk-parliament-erskinemay@1.0.1",
+  "measured": 94,
+  "real": 94,
+  "optional_entries": 0
+ },
+ {
+  "spec": "@yummybait/uniswap-tx-builder-mcp@0.4.3",
+  "measured": 107,
+  "real": 107,
+  "optional_entries": 0
+ },
+ {
+  "spec": "chronoverify-mcp@0.1.7",
+  "measured": 94,
+  "real": 94,
+  "optional_entries": 0
+ },
+ {
+  "spec": "commitshow-mcp@0.1.2",
+  "measured": 94,
+  "real": 94,
+  "optional_entries": 0
+ },
+ {
+  "spec": "@talkform/mcp@0.1.0",
+  "measured": 95,
+  "real": 95,
+  "optional_entries": 0
+ },
+ {
+  "spec": "@lovepivix/mcp-weather-server@1.0.1",
+  "measured": 94,
+  "real": 94,
+  "optional_entries": 0
+ },
+ {
+  "spec": "sql-preview@0.6.15",
+  "measured": 498,
+  "real": 498,
+  "optional_entries": 8
+ },
+ {
+  "spec": "@suverselabs/mcp-server@0.2.2",
+  "measured": 123,
+  "real": 123,
+  "optional_entries": 0
+ },
+ {
+  "spec": "@rog0x/mcp-perf-tools@1.0.2",
+  "measured": 94,
+  "real": 94,
+  "optional_entries": 0
+ },
+ {
+  "spec": "bridgistic-mcp-server@1.1.1",
+  "measured": 126,
+  "real": 126,
+  "optional_entries": 0
+ },
+ {
+  "spec": "@nottiboy1337/mcp-update-hijack-demo@1.0.1",
+  "measured": 1,
+  "real": 1,
+  "optional_entries": 0
+ },
+ {
+  "spec": "cogmemai-mcp@3.17.0",
+  "measured": 160,
+  "real": 160,
+  "optional_entries": 0
+ },
+ {
+  "spec": "@woyax/mcp-max-messenger@1.2.2",
+  "measured": 126,
+  "real": 126,
+  "optional_entries": 0
+ },
+ {
+  "spec": "nan-forget@0.6.8",
+  "measured": 131,
+  "real": 131,
+  "optional_entries": 5
+ },
+ {
+  "spec": "@sima-prime/mcp-server@0.1.6",
+  "measured": 94,
+  "real": 94,
+  "optional_entries": 0
+ },
+ {
+  "spec": "vr-org-mcp@0.3.2",
+  "measured": 94,
+  "real": 94,
+  "optional_entries": 0
+ },
+ {
+  "spec": "@demomagic/mcp@0.1.0",
+  "measured": 94,
+  "real": 94,
+  "optional_entries": 0
+ },
+ {
+  "spec": "github-project-info-mcp@0.1.3",
+  "measured": 94,
+  "real": 94,
+  "optional_entries": 0
+ },
+ {
+  "spec": "@theyahia/mts-exolve-mcp@3.0.1",
+  "measured": 94,
+  "real": 94,
+  "optional_entries": 0
+ },
+ {
+  "spec": "@cyanheads/mailchimp-mcp-server@0.3.7",
+  "measured": 128,
+  "real": 128,
+  "optional_entries": 0
+ },
+ {
+  "spec": "@cyanheads/secedgar-mcp-server@0.15.0",
+  "measured": 157,
+  "real": 157,
+  "optional_entries": 8
+ },
+ {
+  "spec": "google-drive-mcp@1.3.0",
+  "measured": 94,
+  "real": 94,
+  "optional_entries": 0
+ }
+]

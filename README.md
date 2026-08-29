@@ -1,8 +1,9 @@
 # Frisk
 
 [![CI](https://github.com/Jiangw2718i/frisk/actions/workflows/ci.yml/badge.svg)](https://github.com/Jiangw2718i/frisk/actions/workflows/ci.yml)
-[![npm](https://img.shields.io/npm/v/frisk-screen?label=npm)](https://www.npmjs.com/package/frisk-screen)
+[![npm](https://img.shields.io/npm/v/frisk-screen?label=frisk-screen)](https://www.npmjs.com/package/frisk-screen)
 [![PyPI](https://img.shields.io/pypi/v/frisk-screen?label=PyPI)](https://pypi.org/project/frisk-screen/)
+[![npm](https://img.shields.io/npm/v/frisk-mcp?label=frisk-mcp)](https://www.npmjs.com/package/frisk-mcp)
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
 
 **Pre-transaction risk screening for autonomous AI agents.**
@@ -30,16 +31,42 @@ if (!result.allowed) {
 }
 ```
 
-## SDKs
+## Surfaces
 
-| Language   | Package        | Source                             |
-| ---------- | -------------- | ---------------------------------- |
-| TypeScript | `frisk-screen` (npm)  | [`typescript/`](typescript/) |
-| Python     | `frisk-screen` (PyPI) | [`python/`](python/)         |
+| Surface        | Package                | Source                       |
+| -------------- | ---------------------- | ---------------------------- |
+| TypeScript SDK | `frisk-screen` (npm)   | [`typescript/`](typescript/) |
+| Python SDK     | `frisk-screen` (PyPI)  | [`python/`](python/)         |
+| MCP server     | `frisk-mcp` (npm)      | [`mcp/`](mcp/)               |
 
-Both expose the same model: a `Client` with a `screen()` call, a `lite` mode
-that runs locally with zero dependencies, and an optional hosted mode for
+Both SDKs expose the same model: a `Client` with a `screen()` call, a `lite`
+mode that runs locally with zero dependencies, and an optional hosted mode for
 reputation history and live threat intelligence.
+
+## MCP server
+
+For agents that cannot import a library, and for asking the question
+interactively, the same checks are available as an MCP server exposing one
+tool, `screen_payment`:
+
+```json
+{
+  "mcpServers": {
+    "frisk": {
+      "command": "npx",
+      "args": ["-y", "frisk-mcp"]
+    }
+  }
+}
+```
+
+No API key and no account: with no configuration it screens entirely on your
+machine. It is listed in the MCP registry as `dev.tryfrisk/frisk`.
+
+An MCP tool runs only when a model chooses to call it, so a check the model can
+skip is a weaker guarantee than the same check on the code path that signs the
+payment. Where the money actually moves, prefer the SDK. Details in
+[`mcp/`](mcp/).
 
 ## Lite mode vs. hosted
 

@@ -76,8 +76,13 @@ jobs:
       - if: steps.check.outputs.publish == 'true'
         run: pnpm test
 
+      # Built here explicitly: .npmrc sets ignore-scripts, which also silences
+      # the prepublishOnly hook that used to do this.
+      - if: steps.check.outputs.publish == 'true'
+        run: pnpm build
+
       # No NODE_AUTH_TOKEN. npm sees the OIDC token and publishes with
-      # provenance; the `prepublishOnly` hook rebuilds dist from source first.
+      # provenance.
       - if: steps.check.outputs.publish == 'true'
         run: npm publish
 

@@ -101,8 +101,9 @@ def main():
     totals = [r["total"] for r in ok]
     rule("Install size")
     print(f"median packages per server             {st.median(totals):.0f}")
-    print("(the 2026-07-31 census run of the same population gave 94, over 6,030 resolved;")
-    print(" the drift is transitive caret ranges resolving against a newer registry)")
+    print("(one entry per installed copy, so a tree holding two versions of the")
+    print(" same dependency counts both; the 2026-07-31 census run of the same")
+    print(" population gave 94 over 6,030 resolved, on the same definition)")
 
     rule("Name-level match vs semver reachability")
     print(f"compromised names checked against      {len(bad)}")
@@ -200,7 +201,7 @@ def main():
     print(f"servers a wiz-list scan would miss     {len(blind)}")
 
     print("\nNote on reading trees.jsonl: a hit means a name from the compromised")
-    print("set is reachable in that tree as resolved on 2026-08-06, after the")
+    print("set is reachable in that tree as resolved on 2026-08-31, after the")
     print("malicious versions were pulled. It is not a finding that the server")
     print("shipped malware, and it is not a defect in that server.")
 

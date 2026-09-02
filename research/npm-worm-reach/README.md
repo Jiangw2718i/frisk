@@ -8,7 +8,7 @@ More than 440 npm packages were affected.
 This directory measures how far that could reach into the MCP server population
 already measured in [`../mcp-dependency-census`](../mcp-dependency-census).
 
-**36 of 6,012 npm-packaged stdio servers carry a compromised package name.
+**36 of 6,001 npm-packaged stdio servers carry a compromised package name.
 Only 18 could have received a malicious version.**
 
 The other 18 sit a major release behind. `keyv` — the name present in all 36,
@@ -33,7 +33,7 @@ mistake the first draft of the post made.
 | **name match** | is the package anywhere in the tree? | 36 servers |
 | **semver reachable** | does the resolved version share a major with a malicious one, so a caret could have carried the payload? | 18 servers |
 
-Trees were resolved on **2026-08-06**, after npm pulled the malicious versions,
+Trees were resolved on **2026-08-31**, after npm pulled the malicious versions,
 so reachability is inferred from declared ranges rather than observed at the
 time. Spot-checked against the ranges themselves: `cacheable-request@13.0.19`
 declares `keyv: ^5.6.0`, which excludes 6.0.0 by construction — the major gap
@@ -93,9 +93,17 @@ python3 resolve_trees.py               # re-resolve from scratch (~45 min, 12 wo
 
 A fresh resolution will **not** reproduce these numbers exactly, and that is the
 point rather than a defect. The same population, read from the same 2026-07-29
-snapshot, gave a median of 94 packages over 6,030 successes on 2026-07-31 and 92
-over 6,012 on 2026-08-06. Nothing on the input side changed. Transitive caret
-ranges resolving against a newer registry did.
+snapshot, gave a median of 94 packages over 6,030 successes on 2026-07-31 and 95
+over 6,001 on 2026-08-31: names leave npm, and transitive caret ranges resolve
+against a registry that has moved.
+
+An earlier version of this file read the same two runs as 94 and 92 and blamed
+the gap on caret ranges alone. That was wrong, and worth recording because the
+mistake is easy to repeat. `resolve_trees.py` had keyed its package map on the
+name, so two installed copies of one dependency counted once, while the census
+counted installed entries. The two numbers came off different rulers. Where two
+runs of the same instrument disagree, suspect the instrument before the world.
+`total` now counts entries, matching the census exactly.
 
 ## The compromised list
 

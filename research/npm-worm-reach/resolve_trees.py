@@ -88,6 +88,11 @@ def measure(entry):
         with open(lock) as f:
             data = json.load(f)
 
+        # `total` counts lockfile entries, not dict keys. A tree that installs
+        # two versions of the same name has two copies on disk, and `names`
+        # keeps only one of them -- it is keyed on the name so that set
+        # membership can be tested, which is a different question from size.
+        total = 0
         names = {}
         script_pkgs = []
         for key, meta in data.get("packages", {}).items():
@@ -95,6 +100,7 @@ def measure(entry):
                 continue
             if not installs_here(meta):
                 continue
+            total += 1
             pkg = key.split("node_modules/")[-1]
             names[pkg] = meta.get("version")
             if meta.get("hasInstallScript"):
@@ -104,7 +110,7 @@ def measure(entry):
             "name": entry["name"],
             "spec": spec,
             "ok": True,
-            "total": len(names),
+            "total": total,
             "packages": names,
             "install_scripts": sorted(set(script_pkgs)),
         }

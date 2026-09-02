@@ -82,6 +82,28 @@ insecure endpoints, policy violations, and a small seed blocklist — without a
 network call. The hosted API (`https://api.tryfrisk.dev`) adds reputation
 history and continuously updated threat intelligence.
 
+## What a verdict covers
+
+Frisk screens who you are paying. An `allow` means nothing disqualifying was
+found by the checks you gave it enough information to run: the counterparty
+parses as an address and is not on the blocklist, the `payTo` the endpoint
+asked for matches the counterparty you named, the endpoint is served over
+HTTPS, and the amount and asset fall inside the policy you supplied. A check
+whose input you leave out does not run and does not fail — omit
+`observedPayTo` and no `payTo` comparison happens. In hosted mode an `allow`
+also means no adverse reputation history was found.
+
+It says nothing about what comes back. Whether the response matches the shape
+you expected, contains the data you paid for, or is worth the price is a
+separate question, and Frisk deliberately does not answer it. Verifying the
+response contract is worth doing; it belongs after the call, on the buyer's
+side, against the buyer's own definition of a satisfactory answer.
+
+An `allow` is not a claim of safety in general either. In lite mode confidence
+is always `low`, because the checks are structural: a counterparty with no
+history and no defects screens the same as one with a long clean record. The
+verdict is one input to your decision, which is why it is advisory.
+
 ## Design principles
 
 - **Advisory, not in-path.** Frisk never holds your funds or blocks a payment

@@ -97,13 +97,11 @@ snapshot, gave a median of 94 packages over 6,030 successes on 2026-07-31 and 95
 over 6,001 on 2026-08-31: names leave npm, and transitive caret ranges resolve
 against a registry that has moved.
 
-An earlier version of this file read the same two runs as 94 and 92 and blamed
-the gap on caret ranges alone. That was wrong, and worth recording because the
-mistake is easy to repeat. `resolve_trees.py` had keyed its package map on the
-name, so two installed copies of one dependency counted once, while the census
-counted installed entries. The two numbers came off different rulers. Where two
-runs of the same instrument disagree, suspect the instrument before the world.
-`total` now counts entries, matching the census exactly.
+An earlier version of this file read the same two runs as 94 and 92 and put the
+gap down to caret ranges. That was an artefact: `resolve_trees.py` keyed its
+package map on the name, so two installed copies of one dependency counted
+once, while the census counted installed entries. `total` now counts entries,
+matching the census.
 
 ## The compromised list
 

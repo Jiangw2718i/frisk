@@ -62,8 +62,9 @@ adds reputation-graph signals and returns higher-confidence verdicts:
 }
 ```
 
-The hosted tier is in early access — email support@tryfrisk.dev. Everything
-above works without it.
+The hosted tier is free in early access. Get a key, with no account, by running
+`curl -X POST https://api.tryfrisk.dev/keys`, and save it as `FRISK_API_KEY`.
+Everything above works without it.
 
 | variable | default | meaning |
 | --- | --- | --- |

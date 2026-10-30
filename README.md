@@ -80,7 +80,8 @@ payment. Where the money actually moves, prefer the SDK. Details in
 Lite mode catches obvious problems — malformed counterparties, `payTo` swaps,
 insecure endpoints, policy violations, and a small seed blocklist — without a
 network call. The hosted API (`https://api.tryfrisk.dev`) adds reputation
-history and continuously updated threat intelligence.
+history and continuously updated threat intelligence. Get a free key, with no
+account, by running `curl -X POST https://api.tryfrisk.dev/keys`.
 
 ## What a verdict covers
 

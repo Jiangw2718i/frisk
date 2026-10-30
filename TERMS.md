@@ -4,7 +4,7 @@
 > open-source SDKs are separately governed by the MIT License in the public
 > repository.
 
-Last updated: 2026-06-19
+Last updated: 2026-11-11
 
 ## 1. The service
 
@@ -64,6 +64,17 @@ abuse or violation of these Terms.
 API keys are secrets. You are responsible for keeping your keys confidential and
 for all activity under them. Notify us promptly if a key is compromised; we can
 revoke and reissue keys. Keys may stop working shortly after revocation.
+
+You can create a key yourself, with no account, by sending a `POST` request
+to `api.tryfrisk.dev/keys`. The key is shown once. We keep a one-way hash of it
+(never the key itself) and when it was created. We also count each key's calls
+and record when it was last used. To limit how many keys and reports can come
+from one network, we record the IP address a key request or report came from
+(for IPv6, only its /64 network; for a request from a Cloudflare Worker, the
+Worker's domain) and delete it within three days. We use this only to run the
+service, enforce these Terms, and act on abuse. No account is attached to a
+key, so a lost key cannot be recovered; create a new one. To have a key revoked
+and its records deleted, email support@tryfrisk.dev with the key.
 
 ## 7. Availability
 

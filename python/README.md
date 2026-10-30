@@ -52,6 +52,9 @@ key:
 client = Client(api_key="...")
 ```
 
+Get a free key, with no account, by running
+`curl -X POST https://api.tryfrisk.dev/keys`.
+
 ## Design
 
 - **Zero runtime dependencies.** The SDK uses only the standard library.

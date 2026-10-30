@@ -52,6 +52,9 @@ key:
 const client = new Client({ apiKey: "..." });
 ```
 
+Get a free key, with no account, by running
+`curl -X POST https://api.tryfrisk.dev/keys`.
+
 ## Design
 
 - **Zero runtime dependencies.** Built on the platform `fetch` API, so it runs

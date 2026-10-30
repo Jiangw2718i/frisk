@@ -1,3 +1,8 @@
 verifyDepsBeforeRun: false
 allowBuilds:
   esbuild: true
+# Refuse versions published less than 14 days ago (minutes). A fresh
+# compromise is usually caught and pulled within days; this keeps it out of
+# the lockfile. For an urgent fix that is younger, name the package under
+# minimumReleaseAgeExclude rather than lowering this.
+minimumReleaseAge: 20160

@@ -2,37 +2,50 @@ name: Publish
 
 # Publishes on a version tag. No registry tokens exist anywhere in this repo or
 # its secrets: npm and PyPI both authenticate the run itself, via the OIDC token
-# GitHub mints for this workflow file. That means there is no credential to leak
-# and none to rotate, and every artifact carries a provenance attestation
-# pointing back at the commit that built it.
+# GitHub mints for this workflow file. Every artifact carries a provenance
+# attestation pointing back at the commit that built it.
 #
-# Each job is a no-op if that package's version is already on the registry, so a
-# tag that bumps one package does not fail on the two it did not touch.
+# Each package is built and tested in a job that cannot mint that token, and
+# published from a separate job that can but runs nothing from the repository:
+# it downloads the built artifact, and nothing else is installed or executed
+# there. A compromised dev dependency, a poisoned cache or a malicious build
+# script therefore never shares a runner with the publish credential. The
+# publish jobs use no cache at all.
 #
-# Both registries must be told to trust this workflow before the first run:
-#   npm   – npmjs.com > package > Settings > Trusted publisher > GitHub Actions
-#   PyPI  – pypi.org > project > Publishing > Add a GitHub publisher
+# npm releases are staged, not published: the trusted publisher on npm allows
+# only `npm stage publish`, and a staged version goes live only after a
+# maintainer approves it on npmjs.com with a security key. Before approving,
+# download the staged tarball (`npm stage download <id>`) and compare it with
+# the previous release and a local build.
+#
+# PyPI has no equivalent approval step, so a PyPI release goes live as soon as
+# this workflow finishes.
+#
+# Each publish job is a no-op if that version is already on its registry, so a
+# tag that bumps one package does not fail on the ones it did not touch. To
+# retry a failed run, re-run its failed jobs; there is no manual trigger.
+#
+# Both registries must be told to trust this workflow:
+#   npm   - npmjs.com > package > Settings > Trusted publisher > GitHub Actions
+#           (allowed actions: leave "npm publish" unticked)
+#   PyPI  - pypi.org > project > Publishing > Add a GitHub publisher
 # In both cases the workflow filename is `publish.yml` and the repository is
 # Jiangw2718i/frisk.
 
 on:
   push:
-    tags: ["v*"]
-  workflow_dispatch:
+    # v* releases the SDKs (and whatever else bumped); mcp-v* is for a
+    # frisk-mcp release on its own, so the tag does not suggest the SDKs moved.
+    # Either way every job checks its registry and skips what is already there.
+    tags: ["v*", "mcp-v*"]
 
 permissions:
   contents: read
 
 jobs:
-  npm:
+  npm-build:
     runs-on: ubuntu-latest
-    permissions:
-      contents: read
-      id-token: write # mint the OIDC token npm exchanges for publish rights
     strategy:
-      # frisk-mcp depends on frisk-screen from the registry, so a release that
-      # bumps both has to put frisk-screen there first.
-      max-parallel: 1
       matrix:
         dir: [typescript, mcp]
     defaults:
@@ -40,6 +53,8 @@ jobs:
         working-directory: ${{ matrix.dir }}
     steps:
       - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
 
       - uses: pnpm/action-setup@0ebf47130e4866e96fce0953f49152a61190b271 # v6.0.9
         with:
@@ -48,14 +63,55 @@ jobs:
       - uses: actions/setup-node@820762786026740c76f36085b0efc47a31fe5020 # v7.0.0
         with:
           node-version: 22
-          cache: pnpm
-          cache-dependency-path: ${{ matrix.dir }}/pnpm-lock.yaml
+
+      - run: pnpm install --frozen-lockfile
+      - run: pnpm typecheck
+      - run: pnpm test
+      - run: pnpm build
+
+      # .npmrc sets ignore-scripts, so packing runs no lifecycle scripts.
+      - run: npm pack --pack-destination "$RUNNER_TEMP/pkg"
+
+      - uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9 # v7.0.2
+        with:
+          name: npm-${{ matrix.dir }}
+          path: ${{ runner.temp }}/pkg/*.tgz
+          if-no-files-found: error
+          retention-days: 7
+
+  npm-publish:
+    needs: npm-build
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      id-token: write # mint the OIDC token npm exchanges for publish rights
+    strategy:
+      fail-fast: false
+      matrix:
+        dir: [typescript, mcp]
+    env:
+      # The tarball is published as built; nothing in it may run here.
+      npm_config_ignore_scripts: "true"
+    steps:
+      - uses: actions/setup-node@820762786026740c76f36085b0efc47a31fe5020 # v7.0.0
+        with:
+          node-version: 22
           registry-url: https://registry.npmjs.org
 
-      # Trusted publishing needs npm 11.5.1 or newer; Node 22 ships npm 10.
-      - run: npm install --global npm@latest
+      # Staged publishing needs npm 11.15.0 or newer; Node 22 ships npm 10.
+      # Pinned to an exact version so a new npm release cannot run here
+      # unreviewed.
+      - run: npm install --global npm@11.21.0 && npm --version
+
+      - uses: actions/download-artifact@9000827ccba6bdab643e8b6fd33ac0654aef8333 # v8.0.2
+        with:
+          name: npm-${{ matrix.dir }}
+          path: ${{ runner.temp }}/pkg
+
+      - run: tar -xzf "$RUNNER_TEMP"/pkg/*.tgz -C "$RUNNER_TEMP/pkg"
 
       - id: check
+        working-directory: ${{ runner.temp }}/pkg/package
         run: |
           name=$(node -p "require('./package.json').name")
           version=$(node -p "require('./package.json').version")
@@ -67,41 +123,57 @@ jobs:
             echo "publish=true" >> "$GITHUB_OUTPUT"
           fi
 
+      # No NODE_AUTH_TOKEN. npm sees the OIDC token, stages the version with
+      # provenance, and waits for a maintainer to approve it.
       - if: steps.check.outputs.publish == 'true'
-        run: pnpm install --frozen-lockfile
+        working-directory: ${{ runner.temp }}/pkg/package
+        run: npm stage publish --provenance
 
-      - if: steps.check.outputs.publish == 'true'
-        run: pnpm typecheck
-
-      - if: steps.check.outputs.publish == 'true'
-        run: pnpm test
-
-      # Built here explicitly: .npmrc sets ignore-scripts, which also silences
-      # the prepublishOnly hook that used to do this.
-      - if: steps.check.outputs.publish == 'true'
-        run: pnpm build
-
-      # No NODE_AUTH_TOKEN. npm sees the OIDC token and publishes with
-      # provenance.
-      - if: steps.check.outputs.publish == 'true'
-        run: npm publish
-
-  pypi:
+  pypi-build:
     runs-on: ubuntu-latest
-    permissions:
-      contents: read
-      id-token: write
     defaults:
       run:
         working-directory: python
     steps:
       - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
 
       - uses: astral-sh/setup-uv@11f9893b081a58869d3b5fccaea48c9e9e46f990 # v8.3.2
+        with:
+          enable-cache: false
+
+      - run: uv sync --locked
+      - run: uv run pytest -q
+      - run: uv build -o "$RUNNER_TEMP/dist"
+
+      - uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9 # v7.0.2
+        with:
+          name: pypi
+          path: ${{ runner.temp }}/dist/*
+          if-no-files-found: error
+          retention-days: 7
+
+  pypi-publish:
+    needs: pypi-build
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      id-token: write
+    steps:
+      - uses: astral-sh/setup-uv@11f9893b081a58869d3b5fccaea48c9e9e46f990 # v8.3.2
+        with:
+          enable-cache: false
+
+      - uses: actions/download-artifact@9000827ccba6bdab643e8b6fd33ac0654aef8333 # v8.0.2
+        with:
+          name: pypi
+          path: ${{ runner.temp }}/dist
 
       - id: check
         run: |
-          version=$(uv version --short)
+          wheel=$(ls "$RUNNER_TEMP"/dist/*.whl)
+          version=$(basename "$wheel" | cut -d- -f2)
           echo "frisk-screen $version"
           code=$(curl -s -o /dev/null -w '%{http_code}' \
             "https://pypi.org/pypi/frisk-screen/$version/json")
@@ -115,16 +187,7 @@ jobs:
             exit 1
           fi
 
-      - if: steps.check.outputs.publish == 'true'
-        run: uv sync
-
-      - if: steps.check.outputs.publish == 'true'
-        run: uv run pytest -q
-
-      - if: steps.check.outputs.publish == 'true'
-        run: uv build
-
       # `always` rather than `automatic` so a misconfigured trusted publisher
       # fails the run instead of quietly falling back to looking for a token.
       - if: steps.check.outputs.publish == 'true'
-        run: uv publish --trusted-publishing always
+        run: uv publish --trusted-publishing always "$RUNNER_TEMP"/dist/*

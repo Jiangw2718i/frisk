@@ -82,7 +82,7 @@ export function createServer(options: ServerOptions = {}): McpServer {
 
   const server = new McpServer({
     name: "frisk",
-    version: "0.0.1",
+    version: "0.0.2",
   });
 
   server.registerTool(

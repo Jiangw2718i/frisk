@@ -3,7 +3,7 @@
   "name": "dev.tryfrisk/frisk",
   "title": "Frisk",
   "description": "Screen the counterparty of an x402 payment before an agent pays it. Runs offline by default.",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "repository": {
     "url": "https://github.com/Jiangw2718i/frisk",
     "source": "github",
@@ -15,7 +15,7 @@
       "registryType": "npm",
       "registryBaseUrl": "https://registry.npmjs.org",
       "identifier": "frisk-mcp",
-      "version": "0.0.1",
+      "version": "0.0.2",
       "transport": {
         "type": "stdio"
       },

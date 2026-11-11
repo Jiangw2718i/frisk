@@ -1,6 +1,6 @@
 {
   "name": "frisk-mcp",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "MCP server for Frisk: screen an x402 payment counterparty before an agent pays.",
   "mcpName": "dev.tryfrisk/frisk",
   "type": "module",

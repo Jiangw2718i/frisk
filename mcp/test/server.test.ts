@@ -1,4 +1,6 @@
+import { readFileSync } from "node:fs";
 import { Client, InMemoryTransport } from "@modelcontextprotocol/client";
+
 import { beforeEach, describe, expect, it } from "vitest";
 
 import { createServer } from "../src/server.js";
@@ -23,6 +25,15 @@ describe("frisk mcp server", () => {
 
   beforeEach(async () => {
     client = await connect();
+  });
+
+  it("reports the version in package.json", async () => {
+    // The server's version string is written by hand; it once shipped a
+    // release behind package.json.
+    const pkg = JSON.parse(
+      readFileSync(new URL("../package.json", import.meta.url), "utf8"),
+    ) as { version: string };
+    expect(client.getServerVersion()?.version).toBe(pkg.version);
   });
 
   it("exposes exactly one screening tool", async () => {

@@ -3,3 +3,4 @@ dist/
 *.tsbuildinfo
 coverage/
 .env
+THIRD_PARTY_NOTICES.md

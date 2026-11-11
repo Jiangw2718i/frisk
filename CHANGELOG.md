@@ -9,6 +9,17 @@ Both SDKs (`frisk-screen` on npm and PyPI) are versioned together.
 
 ## [Unreleased]
 
+## frisk-mcp 0.0.3 - 2026-11-11
+
+- Bundles its dependencies into `dist/index.js` and declares none, so an
+  install gets exactly the code that was built and tested for the release
+  rather than whatever versions are newest in range that day. The licenses of
+  the bundled packages ship in `THIRD_PARTY_NOTICES.md`. The cost is that a
+  fix in a bundled dependency now reaches users only through a new frisk-mcp
+  release.
+- Requires Node.js 20 or newer. The MCP SDK it is built on has required 20
+  since 2.0; the old `>=18` was never accurate.
+
 ## [0.0.3] - 2026-11-11
 
 ### Changed

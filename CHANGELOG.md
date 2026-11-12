@@ -58,6 +58,7 @@ Both SDKs (`frisk-screen` on npm and PyPI) are versioned together.
   seed blocklist).
 - Hosted mode via API key for reputation history and live threat intelligence.
 
-[Unreleased]: https://github.com/Jiangw2718i/frisk/compare/v0.0.2...HEAD
+[Unreleased]: https://github.com/Jiangw2718i/frisk/compare/mcp-v0.0.3-retry1...HEAD
+[0.0.3]: https://github.com/Jiangw2718i/frisk/releases/tag/v0.0.3
 [0.0.2]: https://github.com/Jiangw2718i/frisk/releases/tag/v0.0.2
 [0.0.1]: https://github.com/Jiangw2718i/frisk/releases/tag/v0.0.1
